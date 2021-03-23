@@ -1,0 +1,90 @@
+### Register user
+POST http://localhost/users
+Content-Type: application/json
+
+{
+  "email": "gab3@gmail.com",
+  "password": "gab"
+}
+
+### LOGIN
+POST http://localhost/auth/login
+Content-Type: application/json
+
+{
+  "email": "gab1@gmail.com",
+  "password": "gab"
+}
+
+### LOGOUT
+POST http://localhost/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MTQ2NDksImV4cCI6MTYxNjUyNTQ0OX0.GlECSOvrYt9nVn6gnBf50WjBRjV7R8yKsUUaSB_1j_w
+Content-Type: application/json
+
+### Send message
+POST http://localhost/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjJAZ21haWwuY29tIiwic3ViIjoyLCJpYXQiOjE2MTY1MjUyNjYsImV4cCI6MTYxNjUzNjA2Nn0.hcYanRrmzbIy3DloJ3eqV3jOoLHz6_zpQYBIlUckNlg
+Content-Type: application/json
+
+{
+  "message": "Hell world",
+  "type": "sms",
+  "recipientId": 1
+}
+
+
+### answer message
+POST http://localhost/messages/24/answer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+{
+  "message": "qsdqsdq world",
+  "type": "sms"
+}
+
+
+### update message
+PATCH http://localhost/messages/21
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjJAZ21haWwuY29tIiwic3ViIjoyLCJpYXQiOjE2MTY1MjIyMzQsImV4cCI6MTYxNjUzMzAzNH0.K1USiCQmFz--rYUrF58wDOe0CjXLFOSQ0Pzi34_kLKo
+Content-Type: application/json
+
+{
+  "message": "qsdqsdq world",
+  "type": "sms"
+}
+
+### delete message
+DELETE http://localhost/messages/24
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+### get my messages
+GET http://localhost/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+### get my messages deleted
+GET http://localhost/messages/deleted
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+### get my messages archived
+GET http://localhost/messages/archived
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MzM0ODAsImV4cCI6MTYxNjU0NDI4MH0.Nt0KMCPFcNZxInavkHOHik9NzMJm1_vzDmlJh8fL7GQ
+Content-Type: application/json
+
+### read message
+GET http://localhost/messages/23/read
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+### get message
+GET http://localhost/messages/23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
+
+### archive message
+PATCH http://localhost/messages/25/archive
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYjFAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MTY1MjYyNjIsImV4cCI6MTYxNjUzNzA2Mn0.36Go-p0y9aTjUt4rQWunAJp6eZfKuOTvZVevcg6fh-U
+Content-Type: application/json
